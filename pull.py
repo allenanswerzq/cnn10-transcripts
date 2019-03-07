@@ -15,8 +15,9 @@ def make_pdf(name, content):
 
 
 def get_html(url):
-    html = requests.get(url).text
-    if x.status_code == 404: exit(1)
+    req = requests.get(url)
+    if req.status_code == 404: exit(1)
+    html = req.text
     head = re.search('class="cnnBodyText">(.*)<\\/P>', html).groups()[0]
     body = re.search('class="cnnBodyText">(.*\n.*)<\\/div>', html).groups()[0]
     body = re.sub('<br>', '\n', body)
