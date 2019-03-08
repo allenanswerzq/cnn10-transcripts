@@ -1,12 +1,14 @@
+#/usr/bin/env python3
+
 import re
 import requests
 from pathlib import Path
 from datetime import date
+from fpdf import FPDF
 
 archives = Path('./archives')
 
 def make_pdf(name, content):
-    from fpdf import FPDF
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font('Courier', size=12)
