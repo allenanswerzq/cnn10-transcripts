@@ -13,7 +13,7 @@ def make_pdf(name, content):
     pdf.add_page()
     pdf.set_font('Courier', size=12)
     pdf.write(5, content)
-    pdf.output(name)
+    pdf.output(str(name))
 
 
 def get_html(url):
